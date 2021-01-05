@@ -3,12 +3,12 @@ public class Node{
   private Node next, prev;
 
   public Node(int value, Node next, Node prev){
-    data = value;
+    data = value+"";
     this.next = next;
     this.prev = prev;
   }
 
-  public int getValue(){
+  public String getValue(){
     return data;
   }
 
@@ -24,7 +24,7 @@ public class Node{
     next = newNode;
   }
 
-  public void setValue(int newValue){
+  public void setValue(String newValue){
     data = newValue;
   }
 
