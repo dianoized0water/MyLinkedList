@@ -52,7 +52,7 @@ public class MyLinkedList{
       size++;
       return true;
     }
-    if (index==size || index==0){
+    if (index==size || size==0){
       add(value);
     }
     else{
