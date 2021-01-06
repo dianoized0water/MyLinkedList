@@ -2,10 +2,14 @@ public class Node{
   private String data;
   private Node next, prev;
 
-  public Node(int value, Node next, Node prev){
-    data = value+"";
+  public Node(String value, Node next, Node prev){
+    data = value;
     this.next = next;
     this.prev = prev;
+  }
+
+  public Node(String value){
+    value = data;
   }
 
   public String getValue(){

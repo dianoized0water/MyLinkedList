@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 
 public class MyLinkedList{
   private int size;
@@ -51,7 +51,7 @@ public class MyLinkedList{
       n.setPrev(null);
       start.setPrev(n);
       start = n;
-      size++
+      size++;
       return true;
     }
     if (index==size){
@@ -62,7 +62,7 @@ public class MyLinkedList{
       n.setPrev(null);
       start.setPrev(n);
       start = n;
-      size++
+      size++;
       return true;
     }
     else{
