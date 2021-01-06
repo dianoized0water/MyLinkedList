@@ -4,8 +4,8 @@ public class Node{
 
   public Node(String value, Node nxt, Node prv){
     data = value;
-    next = next;
-    prev = prev;
+    next = nxt;
+    prev = prv;
   }
 
   public Node(String value){
