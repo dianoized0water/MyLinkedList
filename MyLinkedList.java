@@ -44,6 +44,9 @@ public class MyLinkedList{
 
   public boolean add(int index, String value){
     Node n = new Node(value);
+    if (index==size || size==0){
+      add(value);
+    }
     if (index==0){
       n.setNext(start);
       n.setPrev(null);
@@ -51,9 +54,6 @@ public class MyLinkedList{
       start = n;
       size++;
       return true;
-    }
-    if (index==size || size==0){
-      add(value);
     }
     else{
       n.setNext(getNode(index));
