@@ -52,16 +52,8 @@ public class MyLinkedList{
       size++;
       return true;
     }
-    if (index==size){
+    if (index==size || index==0){
       add(value);
-    }
-    if (size==0){
-      n.setNext(start);
-      n.setPrev(null);
-      start.setPrev(n);
-      start = n;
-      size++;
-      return true;
     }
     else{
       n.setNext(getNode(index));
