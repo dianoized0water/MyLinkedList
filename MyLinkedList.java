@@ -90,7 +90,7 @@ public class MyLinkedList{
     Node n = start;
     for (int i=0; i<size; i++){
       str += n.getValue();
-      if(i.getNext()!=null){
+      if(n.getNext()!=null){
         str +=", ";
       }
       n = n.getNext();
