@@ -75,7 +75,26 @@ public class MyLinkedList{
     }
   }
 
-  public String toString(){
+  public String get(int index){
+    return getNode(index).getValue();
+  }
 
+  public String set(int index, String value){
+    String original = getNode(index).getValue();
+    getNode(index).setValue(value);
+    return original;
+  }
+
+  public String toString(){
+    String str = "";
+    Node n = start
+    for (int i=0; i<size; i++){
+      str += n.getValue();
+      if(i.getNext()!=null){
+        str +=", ";
+      }
+      n = n.getNext();
+    }
+    return str;
   }
 }
