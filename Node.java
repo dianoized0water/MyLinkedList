@@ -2,10 +2,10 @@ public class Node{
   private String data;
   private Node next, prev;
 
-  public Node(String value, Node next, Node prev){
+  public Node(String value, Node nxt, Node prv){
     data = value;
-    this.next = next;
-    this.prev = prev;
+    next = next;
+    prev = prev;
   }
 
   public Node(String value){
