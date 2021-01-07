@@ -99,4 +99,25 @@ public class MyLinkedList{
     }
     return "[" + str + "]";
   }
+
+  public String remove(int index){
+    Node n = getNode(index);
+    n.getPrev().setNext(n.getNext());
+    n.getNext().setPrev(n.getPrev());
+    return n.getValue();
+  }
+
+  public void extend(MyLinkedList other){
+    if (size==0){
+      start = other.start;
+    }
+    else if (other.size != 0){
+      this.end.setNext(other.start);
+      other.start.setPrev(this.end);
+      this.end = other.end;
+      size = size + other.size;
+    }
+    other.start = null;
+    other.size = 0;
+  }
 }
