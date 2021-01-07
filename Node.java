@@ -2,7 +2,7 @@ public class Node{
   private String data;
   private Node next, prev;
 
-  public Node(String value, Node nxt, Node prv){
+  public Node(String value, Node prv, Node nxt){
     data = value;
     next = nxt;
     prev = prv;
