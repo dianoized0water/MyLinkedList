@@ -101,10 +101,37 @@ public class MyLinkedList{
   }
 
   public String remove(int index){
-    Node n = getNode(index);
-    n.getPrev().setNext(n.getNext());
-    n.getNext().setPrev(n.getPrev());
-    return n.getValue();
+    if (index>size-1 || index<0){
+      throw new IndexOutOfBoundsException();
+    }
+    if (size==1){
+      String org = start.getValue();
+      size=0;
+      start = null;
+      end = null;
+      return org;
+    }
+    if (index==0){
+      String org = start.getValue();
+      size--;
+      start = start.getNext();
+      start.setPrev(null);
+      return org;
+    }
+    if (index==size-1){
+      String org = end.getValue();
+      size--;
+      end = getNode(index-1);
+      getNode(index-1).setNext(null);
+      return org;
+    }
+    else{
+      String org = getNode(index).getValue();
+      getNode(index+1).setPrev(getNode(index-1));
+      getNode(index-1).setNext(getNode(index+1));
+      size--;
+      return org;
+    }
   }
 
   public void extend(MyLinkedList other){
