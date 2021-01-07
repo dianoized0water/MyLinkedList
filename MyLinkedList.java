@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MyLinkedList{
   private int size;
   private Node start, end;
@@ -43,11 +45,14 @@ public class MyLinkedList{
   }
 
   public boolean add(int index, String value){
+    if (index<0 || index>size){
+      throw new IndexOutOfBoundsException();
+    }
     Node n = new Node(value);
     if (index==size || size==0){
       add(value);
     }
-    if (index==0){
+    if (index==0 && size!=0){
       n.setNext(start);
       n.setPrev(null);
       start.setPrev(n);
@@ -66,10 +71,16 @@ public class MyLinkedList{
   }
 
   public String get(int index){
+    if (index<0 || index>size-1){
+      throw new IndexOutOfBoundsException();
+    }
     return getNode(index).getValue();
   }
 
   public String set(int index, String value){
+    if (index<0 || index>size-1){
+      throw new IndexOutOfBoundsException();
+    }
     String original = getNode(index).getValue();
     getNode(index).setValue(value);
     return original;
