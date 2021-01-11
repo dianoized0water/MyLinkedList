@@ -104,34 +104,25 @@ public class MyLinkedList{
     if (index>size-1 || index<0){
       throw new IndexOutOfBoundsException();
     }
+    String org = start.getValue();
     if (size==1){
-      String org = start.getValue();
-      size=0;
       start = null;
       end = null;
-      return org;
     }
-    if (index==0){
-      String org = start.getValue();
-      size--;
+    else if (index==0){
       start = start.getNext();
       start.setPrev(null);
-      return org;
     }
-    if (index==size-1){
-      String org = end.getValue();
-      size--;
-      end = getNode(index-1);
-      getNode(index-1).setNext(null);
-      return org;
+    else if (index==size-1){
+      end = end.getPrev();
+      end.setNext(null);
     }
     else{
-      String org = getNode(index).getValue();
       getNode(index+1).setPrev(getNode(index-1));
       getNode(index-1).setNext(getNode(index+1));
-      size--;
-      return org;
     }
+    size--;
+    return org;
   }
 
   public void extend(MyLinkedList other){
@@ -145,6 +136,7 @@ public class MyLinkedList{
       size = size + other.size;
     }
     other.start = null;
+    other.end = null;
     other.size = 0;
   }
 }
